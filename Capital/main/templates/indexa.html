@@ -1,0 +1,933 @@
+{% load static %}{% load humanize %}
+<!DOCTYPE html>
+<html class="overflow-x-hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Aila" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="HiBootstrap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/static/img/ms-icon-144x144.png"/>
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Capital | Best Investment Platform</title>
+
+    <script src="https://use.fontawesome.com/d3bea22ec6.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/static/styling/css/bootstrap.min.css" type="text/css" media="all"/>
+    <!-- animate css -->
+    <link rel="stylesheet" href="/static/styling/css/animate.min.css" type="text/css" media="all"/>
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="/static/styling/css/meanmenu.min.css" type="text/css" media="all"/>
+    <!-- boxicons css -->
+    <link rel="stylesheet" href="static/styling/css/boxicons.min.css" type="text/css" media="all"/>
+    <!-- style css -->
+    <link rel="stylesheet" href="/static/styling/css/style.css" type="text/css" media="all"/>
+    <!-- responsive css -->
+    <link rel="stylesheet" href="/static/styling/css/responsive.css" type="text/css" media="all"/>
+
+    <script src="f18030f577.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link href="npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed-top">
+      <div class="navbar-area">
+        <!-- mobile menu -->
+        <div class="mobile-nav">
+          <h4 class="logo">Logo</h4>
+          <!--<a href="#" class="logo"><img src="" style="width: 150px" alt="Capital"/></a>-->
+        </div>
+        <!-- desktop menu -->
+        <div class="header-container main-nav-3">
+          <nav class="d-flex bg-white justify-content-between navbar navbar-expand-sm navbar-light">
+            <h4 class="logo">Logo</h4>
+            <!--<a class="navbar-brand" href="#"><img src="" style="width: 130px" alt="Capital" /></a>-->
+            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'history' %}" class="nav-link">History</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'team' %}" class="nav-link">Our Team</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#investment-section" class="nav-link">Investment</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a href="{% url 'profile' %}" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a href="{% url 'login' %}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'signup' %}" class="nav-link">Signup</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+            <!-- navbar option -->
+          </nav>
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            <script
+              type="text/javascript"
+              src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+              async
+            >
+                {
+                "symbols": [
+                  {
+                    "proName": "FOREXCOM:SPXUSD",
+                    "title": "S&P 500"
+                  },
+                  {
+                    "proName": "FOREXCOM:NSXUSD",
+                    "title": "US 100"
+                  },
+                  {
+                    "proName": "FX_IDC:EURUSD",
+                    "title": "EUR/USD"
+                  },
+                  {
+                    "proName": "BITSTAMP:BTCUSD",
+                    "title": "Bitcoin"
+                  },
+                  {
+                    "proName": "BITSTAMP:ETHUSD",
+                    "title": "Ethereum"
+                  }
+                ],
+                "showSymbolLogo": true,
+                "colorTheme": "dark",
+                "isTransparent": false,
+                "displayMode": "regular",
+                "locale": "en"
+              }
+            </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+      </div>
+    </div>
+    <!--end navbar-->
+
+    <!--FIRST SECTION BEGIN-->
+    <div class="slideshow-container" id="home-section">
+      <div class="mySlides fade">
+        <img class="first-image" src="/static/styling/img/bg-1.jpg" style="width: 100%" />
+        <div class="text first-width">
+          <h4 class="text-white">Capital</h4>
+          <p class="text_1">We recognize that smart financial planning will make a significant impact in <b>one's life</b></p>
+          <p class="text-white">You're in capable hands. Allow yourself to do so. We are a reliable source of information. </p>
+          <a href="{% url "signup" %}" class="btn primary-light-bg btn-round text-white pr-4 pl-4" style="margin-top: 10px">
+            <i class="fa fa-user-plus fa-2x" style="font-size: 15px"></i>
+            Sign up
+          </a>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img class="first-image" src="/static/styling/img/bg-4.jpg" style="width: 100%" />
+        <div class="text first-width">
+          <h4 class="text-white">Fixed Income Protection</h4>
+          <p class="text_1">We recognize that smart financial planning will make a significant impact in <b>one's life</b></p>
+          <p class="text-white">We are a reliable source of information. </p>
+          <a href="{% url "signup" %}" class="btn primary-light-bg btn-round text-white pr-4 pl-4" style="margin-top: 10px">
+            <i class="fa fa-user-plus fa-2x" style="font-size: 15px"></i>
+            Sign up
+          </a>
+        </div>
+      </div>
+
+      <div class="mySlides fade">
+        <img class="first-image" src="/static/styling/img/bg-2.jpg" style="width: 100%" />
+        <div class="text first-width">
+          <h4 class="text-white">We prioritize you</h4>
+          <p class="text_1">We recognize that smart financial planning will make a significant impact in <b>one's life</b></p>
+          <p class="text-white">You're in capable hands. Allow yourself to do so. We are a reliable source of information. </p>
+          <a href="{% url "signup" %}" class="btn primary-light-bg btn-round text-white pr-4 pl-4" style="margin-top: 10px">
+            <i class="fa fa-user-plus fa-2x" style="font-size: 15px"></i>
+            Sign up
+          </a>
+        </div>
+      </div>
+
+      <div class="dots" style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+    <!--FIRST SECTION END-->
+
+    <!-- SECOND SECTION BEGINS -->
+    <section class="dark-bg">
+      <div class="container">
+      <div class="row just-content-between py-5">
+        <div class="col-sm-12 col-md-6 col-lg-6 pr-md-4">
+          <div class="">
+            <h4 class="text-white pb-4">Our Goal</h4>
+            <p class="text-white home-about-para">Our stated objectives are to make our consumers feel safe. Our experienced staff designs financing solutions that are specifically matched to your requirements.</p>
+            <p class="text-white home-about-para">We will do everything we can to assist you in making your ideas a reality and ensuring the success of your investments.</p>
+            <p class="text-white home-about-para">We operate with a variety of financial partners and are always ready to do business with foreign investors.</p>
+            <p class="text-white home-about-para">Our experts are well-versed in the strategies for creating and maintaining an investment mix that is tailored to your objectives. This assists you in meeting your financial objectives while managing risk and performance.</p>
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6 pl-md-4 pt-responsive">
+          <div class="">
+            <h4 class="text-white pb-4">Quality and reliability</h4>
+            <p class="text-white home-about-para">We provide a wide range of high-quality and dependable services, including Cryptocurrency Mining Investments, Cryptocurrency Investments, Forex Trading, Stock and Commodities Investment, and General Investment Consultancy.</p>
+          </div>
+        </div>
+      </div>
+      <div class="container d-flex py-5">
+        <div class="w-75">
+        <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"
+                    async
+                  >
+                      {
+                      "symbols": [
+                        [
+                          "Apple",
+                          "AAPL|1D"
+                        ],
+                        [
+                          "Google",
+                          "GOOGL|1D"
+                        ],
+                        [
+                          "Microsoft",
+                          "MSFT|1D"
+                        ],
+                        [
+                          "BITSTAMP:BTCUSD|1D"
+                        ]
+                      ],
+                      "chartOnly": false,
+                      "isTransparent": true,
+                      "width": 800,
+                      "height": 500,
+                      "locale": "en",
+                      "colorTheme": "dark",
+                      "autosize": false,
+                      "showVolume": false,
+                      "showMA": false,
+                      "hideDateRanges": false,
+                      "hideMarketStatus": false,
+                      "hideSymbolLogo": false,
+                      "scalePosition": "right",
+                      "scaleMode": "Normal",
+                      "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+                      "fontSize": "10",
+                      "noTimeScale": false,
+                      "valuesTracking": "1",
+                      "changeMode": "price-and-percent",
+                      "chartType": "area",
+                      "maLineColor": "#2962FF",
+                      "maLineWidth": 1,
+                      "maLength": 9,
+                      "lineWidth": 2,
+                      "lineType": 0,
+                      "dateRanges": [
+                        "1d|1",
+                        "1m|30",
+                        "3m|60",
+                        "12m|1D",
+                        "60m|1W",
+                        "all|1M"
+                      ]
+                    }
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+        </div>
+        <div class="w-25">
+          <!-- TradingView Widget BEGIN -->
+          <div class="tradingview-widget-container">
+            <div class="tradingview-widget-container__widget"></div>
+            
+            <script
+              type="text/javascript"
+              src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js"
+              async
+            >
+                {
+                "symbol": "BITSTAMP:BTCUSD",
+                "width": "100%",
+                "height": "100%",
+                "locale": "en",
+                "dateRange": "12M",
+                "colorTheme": "dark",
+                "isTransparent": true,
+                "autosize": true,
+                "largeChartUrl": ""
+              }
+            </script>
+          </div>
+          <!-- TradingView Widget END -->
+        </div>
+      </div>
+    </div>
+    </section>
+    <!-- SECOND SECTION ENDS -->
+
+    <!-- THIRD SECTION BEGINS -->
+    <section
+      class="home-about-section-2 bg-off-white pt-50 pb-70 overflow-hidden"
+      id="about-section">
+      <div class="container-fluid p-0">
+        <div class="home-about-content">
+          <!-- Crypto trading at its -->
+          <div class="align-items-center m-0">
+            <div class="container col-sm-12 p-0">
+              <div
+                class="container"
+              >
+                <h4 class="text3 pb-3" id="about-section">Crypto Trading at it's Best</h4>
+                <p class="home-about-para">
+                  Capital has demonstrated, commendably, successful and steady performance and trading history since its inception. It is now considered as one of the greatest, most advantageous, most stunningly successful firms in the Forex trading and cryptocurrency investment industry.
+                </p>
+                <p class="home-about-para">
+                  Our firm has received a large amount of excellent evaluations and feedback from clients all around the world, and our popularity continues to grow with each passing day.
+                </p>
+                <p class="home-about-para">
+                  Capital provides its users with the greatest possible management system as well as a risk control system that strives to guarantee that their funds are managed effectively, allowing our investors to enjoy every second of their investment experience.
+                </p>
+                <div class="home-about-list">
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Protection
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      Take advantage of strong DDOS protection
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Encryption
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      128-bit SSL encryption is quite safe
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Stable Income
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      Fixed Daily Profits with high interests
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Friendly Staff
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      Support you 24 hours a day and 7 days a week
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Instant Payments
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      All withdrawal requests up to $500 are paid instantly
+                    </p>
+                  </div>
+                  <div class="col-6">
+                    <div class="home-about-list-item">
+                      <img src="/static/styling/img/check.png" alt="checl" />
+                      Instant Resolution
+                    </div>
+                    <p class="home-about-para mx-auto" style="width:80%;">
+                      Any issue encountered during investment will be resolved with immediate effect
+                    </p>
+                  </div>              
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Our Investment Packages -->
+          <div class="mt-50" id="investment-section">
+            <div class="container col-sm-12 p-0">
+              <div
+                class="container"
+              >
+                <h4 class="text3 pb-3">Our Investment Packages</h4>
+                <p class="home-about-para">
+                  Capital offers a variety of packages to suit the needs of all investors, regardless of their financial situation.
+                </p>
+                <div class="row just-content-between">
+                  <div class="col-sm-12 col-md-12 col-lg-3 p-3">
+                    <div class="p-3 dark-bg" style="border-radius:5px">
+                      <h4 class="pb-3 text-white" style="font-size:15px">0.84% Daily</h4>
+                      <h4 class="pb-3 text-white" style="font-size:20px">Beginner</h4>
+                      <p class="text-white pb-2">MinimumDpt : $500</p>
+                      <p class="text-white pb-2">MinimumDpt : $4,999</p>
+                      <p class="text-white pb-2">Duration : 1 Months</p>
+                      <p class="text-white pb-2">Withdrawal : Weekly/Monthly</p>
+                      <a href="{% url "signup" %}" class="btn1 primary-light-bg btn-with-image w-100 btn-round text-white">
+                        Deposit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-3 p-3">
+                    <div class="p-3 dark-bg" style="border-radius:5px">
+                      <h4 class="pb-3 text-white" style="font-size:15px">1.54% Daily</h4>
+                      <h4 class="pb-3 text-white" style="font-size:20px">Executive</h4>
+                      <p class="text-white pb-2">MinimumDpt : $5,000</p>
+                      <p class="text-white pb-2">MinimumDpt : $49,999</p>
+                      <p class="text-white pb-2">Duration : 3 Months</p>
+                      <p class="text-white pb-2">Withdrawal : Monthly</p>
+                      <a href="{% url "signup" %}" class="btn1 primary-light-bg btn-with-image w-100 btn-round text-white">
+                        Deposit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-3 p-3">
+                    <div class="p-3 dark-bg" style="border-radius:5px">
+                      <h4 class="pb-3 text-white" style="font-size:15px">1.87% Daily</h4>
+                      <h4 class="pb-3 text-white" style="font-size:20px">Premium</h4>
+                      <p class="text-white pb-2">MinimumDpt : $50,000</p>
+                      <p class="text-white pb-2">MinimumDpt : $99,999</p>
+                      <p class="text-white pb-2">Duration : 4 Months</p>
+                      <p class="text-white pb-2">Withdrawal : Monthly</p>
+                      <p class="text-white pb-2">Benefit: Capital Hall of Fame Membership</p>
+                      <a href="{% url "signup" %}" class="btn1 primary-light-bg btn-with-image w-100 btn-round text-white">
+                        Deposit
+                      </a>
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-12 col-lg-3 p-3">
+                    <div class="p-3 dark-bg" style="border-radius:5px">
+                      <h4 class="pb-3 text-white" style="font-size:15px">2% Daily</h4>
+                      <h4 class="pb-3 text-white" style="font-size:20px">Master</h4>
+                      <p class="text-white pb-2">MinimumDpt : $100,000</p>
+                      <p class="text-white pb-2">MinimumDpt : $499,999</p>
+                      <p class="text-white pb-2">Duration : 5 Months</p>
+                      <p class="text-white pb-2">Withdrawal : Weekly/Monthly</p>
+                      <p class="text-white pb-2">Benefits: Capital hall of fame membership, $1500 monthly retirement aid</p>
+                      <a href="{% url "signup" %}" class="btn1 primary-light-bg btn-with-image w-100 btn-round text-white">
+                        Deposit
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- THIRD SECTION END -->
+    
+    <!-- FOURTH SECTION (SERVICES) BEGIN -->
+    <section class="home-facility-section pt-50 pb-70 border-top-mob dark-bg" id="services-section">
+      <div class="container">
+        <div class="home-facility-content">
+          <h4 class="text-white">Our Services</h4>
+          <div class="row align-items-center">
+            <div class="row just-content-between">
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-1.jpg" height="300px" style="width: 100%;" />
+                  <p class="pb-3 pt-1 blue-font" style="font-size:20px">Cryptocurrency Trading</p>
+                  <p class="pb-2 text-white">Cryptocurrencies are software protocols for creating digital tokens and recording transactions in a way that makes counterfeiting and reusing tokens difficult.</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-2.jpg" height="300px" style="width: 100%;" />
+                  <h4 class="pb-3 pt-1 blue-font" style="font-size:20px">Forex Trading</h4>
+                  <p class="pb-2 text-white">Foreign Exchange is abbreviated as Forex or FX, and Forex trading refers to trading on this market. Trading is done by anticipating the performance of one currency against another.</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-3.jpg" height="300px" style="width: 100%;" />
+                  <h4 class="pb-3 pt-1 blue-font" style="font-size:20px">Loans</h4>
+                  <p class="pb-2 text-white">Getting a loan doesn't have to be a difficult procedure; with the appropriate lender, it can be a breeze. All you need is a lender that is committed to...</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-4.jpg" height="300px" style="width: 100%;" />
+                  <h4 class="pb-3 pt-1 blue-font" style="font-size:20px">Hedge Funds</h4>
+                  <p class="pb-2 text-white">Hedge fund exchange. An online version of a classic capital introduction program for Hedge Funds that employ CIS as their primary investment vehicle.</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-5.jpg" height="300px" style="width: 100%;" />
+                  <h4 class="pb-3 pt-1 blue-font" style="font-size:20px">Non-Farm Payroll</h4>
+                  <p class="pb-2 text-white">In the cryptocurrency and forex markets, the NFP report is one of the most anticipated economic news updates. The US Bureau of Labor Statistics releases its monthly report on the first Friday of each month at 8:30 a.m. Eastern time.</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 p-3">
+                <div class="p-3" style="border-radius:5px">
+                  <img src="/static/styling/img/fifth-sec-6.jpg" height="300px" style="width: 100%;" />
+                  <h4 class="pb-3 pt-1 blue-font" style="font-size:20px">Escrow Services</h4>
+                  <p class="pb-2 text-white">Escrow is used when two parties are finishing a deal and there is a question about whether one party or the other will complete the transaction.</p>
+                  <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+                    Learn More
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FOURTH SECTION END -->
+
+    <!-- FIFTH SECTION BEGINS (TESTIMONIAL) -->
+    <section class="counter-section pt-50 pb-70">
+      <div class="container">
+        <h4 class="text3 pb-3"><b>What</b> Client's Say</h4>
+        <div class="d-none d-md-block">
+        <div class="d-flex just-content-between">
+          <div class="col-md-12 col-lg-4 p-3">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-1.jpg" height="70px" style="width: 60%; margin: 30px 0 0 30px" />
+            <div class="m-4">
+              <h4 class="text3 pb-3">Jamie Pan</h4>
+              <p class="home-about-para">I tell all my friends and colleagues about Capital and they've grown to love it as much as i do, it's truly an opportunity of a lifetime. You get to make money from your social media account and by downloading apps.</p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4 p-3">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-2.jpg" height="70px" style="width: 60%; margin: 30px 0 0 30px" />
+            <div class="m-4">
+              <h4 class="text3 pb-3">Stacy M</h4>
+              <p class="home-about-para">I have a small following on Instagram and I found Capital about a year ago. I've been getting paid for promoting my invite link on IG stories, Facebook timeline, and Twitter feed I also like completing their surveys.</p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-4 p-3">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-3.jpg" height="70px" style="width: 60%; margin: 30px 0 0 30px" />
+            <div class="m-4">
+              <h4 class="text3 pb-3">Elin Elina</h4>
+              <p class="home-about-para">I initially started using Capital for side income but it has turned into my main work. Their payout is very high and they allow you to cash out instantly. I love THEM and you should TOO.</p>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+        <div class="slideshow2-container d-md-none">
+          <div class="mySlides2 fade">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-1.jpg" height="70px" style="width: 60%; margin: 20px 0 0 10px" />
+            <div class="mt-3 ml-3 mr-2">
+              <h6 class="text-testimonial-1 pb-1">Jamie Pan</h6>
+              <p class="text-testimonial">
+                I tell all my friends and colleagues about Capital and they've grown to love it as much as i do, it's truly an opportunity of a lifetime. You get to make money from your social media account and by downloading apps.
+              </p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="mySlides2 fade">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-2.jpg" height="70px" style="width: 60%; margin: 20px 0 0 10px" />
+            <div class="mt-3 ml-3 mr-2">
+              <h4 class="text-testimonial-1 pb-1">Stacy M</h4>
+              <p class="text-testimonial">
+                I have a small following on Instagram and I found Capital about a year ago. I've been getting paid for promoting my invite link on IG stories, Facebook timeline, and Twitter feed I also like completing their surveys.
+              </p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="mySlides2 fade">
+            <div class="border mx-auto" style="border-radius:5px; height:300px; max-width:500px">
+            <div class="d-flex mx-auto" style="border-radius:5px; border-top:4px solid #00a4e6; height:300px; max-width:500px">
+            <img src="/static/styling/img/testimonial-3.jpg" height="70px" style="width: 60%; margin: 20px 0 0 10px" />
+            <div class="mt-3 ml-3 mr-2">
+              <h4 class="text-testimonial-1 pb-1">Elin Elina</h4>
+              <p class="text-testimonial">
+                I initially started using Capital for side income but it has turned into my main work. Their payout is very high and they allow you to cash out instantly. I love THEM and you should TOO.</p>
+            </div>
+            </div>
+            </div>
+          </div>
+          <div class="dots" style="text-align: center">
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+            <span class="dot2"></span>
+          </div>
+        </div>
+        <div class="counter-content pt-100">
+          <div class="counter-item">
+            <h3>
+              <span class="counter">2182</span
+              ><span class="counter-text-lg">k</span>
+            </h3>
+            <p>Registered Users</p>
+          </div>
+          <div class="counter-item">
+            <h3>
+              <span class="counter">1721</span
+              ><span class="counter-text-sm">K</span>
+            </h3>
+            <p>Happy Clients</p>
+            <div class="counter-loader">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="counter-item">
+            <h3>
+              <span class="counter">491</span
+              ><span class="counter-text-sm">+</span>
+            </h3>
+            <p>Logged in Users</p>
+            <div class="counter-loader">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="counter-item">
+            <h3>
+              <span class="counter">5</span
+              ><span class="counter-text-lg">+</span>
+            </h3>
+            <p>Years Of Experience</p>
+            <div class="counter-loader">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- FIFTH SECTION END -->
+
+    <!-- SIXTH SECTION BEGINS -->
+    <section class="dark-bg pb-50">
+      <div class="container py-5">
+        <div class="" id="strategy-section">
+          <div class="pr-5">
+            <h4 class="text-white">Planned to stay together forever</h4>
+            <p class="text-white py-4 home-about-para">Capital.com has made internet investing a very pleasant, quick, simple, safe, and largely risk-free experience.</p>
+          </div>
+          <div class="row just-content-between">
+            <div class="col-sm-12 col-md-12 col-lg-3 sixth-img">
+              <img src="/static/styling/img/join-1.jpg" height="100%" style="width: 100%; border-radius:50%" />
+              <p class="plan1">Join Us</p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 sixth-img pt-responsive">
+              <img src="/static/styling/img/join-4.jpg" height="100%" style="width: 100%; border-radius:50%" />
+              <p class="plan1">Select Plan</p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 sixth-img pt-responsive">
+              <img src="/static/styling/img/join-3.jpg" height="100%" style="width: 100%; border-radius:50%" />
+              <p class="plan1">Invest</p>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-3 sixth-img pt-responsive">
+              <img src="/static/styling/img/join-2.jpg" height="100%" style="width: 100%; border-radius:50%" />
+              <p class="plan1">See your money growing</p>
+            </div>
+          </div>
+        </div>
+        <div class="" id="whyus-section">
+          <div class="py-5">
+            <h4 class="text-white pt-5">Why us</h4>
+            <p class="text-white py-4 home-about-para">Capital is a privately held, legally recognized online investment firm dedicated to making the most money possible through cryptocurrency and forex trading. If this seems like your perfect circumstance and you're thinking about getting into online investment marketing, we highly advise you to give us a go at Capital.com; we're confident you'll be a tremendous success working with us.</p>
+            <p class="text-white py-2 home-about-para">Capital administers a variety of alternative investment strategies and provides investment management and investment advising services to a number of Australian unit trusts and Cayman Island corporations.</p>
+            <a href="{% url "about" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+              Read More
+            </a>
+          </div>
+          <div class="pt-5">
+            <h4 class="text-white">Affiliate Program</h4>
+            <h5 class="text-white pt-5 pb-3">You will earn more income with our affiliate earning offers</h5>
+            <p class="text-white home-about-para">Capital rewards investors who refer friends and family to the firm with a handsome 10% bonus on the new investor's initial contribution. The Australian Hedge Fund of the Year has been chosen.</p>
+            <p class="text-white home-about-para">The affiliate network that we provide is a simple and straightforward approach to boost your revenue. All you have to do now is tell your friends about our work and encourage them to join us in protecting their future. As a thank you, we'll give you a significant raise depending on your affiliate efforts.</p>
+            <p class="text-white pb-2 home-about-para">When a new investor's deposit is confirmed, the commission is paid into the investor's portfolio. This is our way of expressing THANK YOU for putting your faith in us!!</p>
+            <a href="{% url "signup" %}" class="btn primary-light-bg mx-auto btn-round text-white pr-4 pl-4">
+              Apply Here
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SIXTH SECTION ENDS -->
+
+   <!-- SEVENTH SECTION BEGINS -->
+   <section class="home-about-section-2 bg-off-white pt-50 pb-70 overflow-hidden"
+   id="about-section">
+   <div class="container-fluid p-0">
+     <div class="home-about-content">
+       <!-- Crypto trading at its -->
+       <div class="align-items-center m-0">
+         <div class="container col-sm-12 p-0">
+           <div class="container">
+             <div class="home-about-list">
+               <div class="col-sm-12 col-md-12 col-lg-6"><h4 class="text3 pb-3">OUR <b>LEGALS</b></h4>
+                <h6 class="home-about-para">Certificate of Incorporation</h6>
+                <p class="home-about-para">Capital is a legal body fulfilling all legal jurisdictions and financial compliances under the authorities in the United States of America. Capital is registered and monitored under the United States Securities and Exchange Commision.</p>
+               </div>
+               <div class="col-sm-12 col-md-12 col-lg-6">
+                 <div class="">
+                  <img src="/static/styling/img/legals.jpeg" height="450px" style="width: 100%;" />
+                  
+                </div>
+               </div>            
+             </div>
+           </div>
+         </div>
+       </div>
+       <!-- Our Team -->
+       <div class="mt-50" id="team-section">
+         <div class="container col-sm-12 p-0">
+           <div
+             class="container"
+           >
+             <h4 class="text3 py-3">Meet Our Awesome Team</h4>
+             <p class="home-about-para">Reliable and trusted team</p>
+             <div class="row just-content-between">
+              <div class="col-sm-12 col-md-12 col-lg-4">
+                <div class="dark-bg" style="border-radius:5px; border-top:5px solid #162c44">
+                  <img src="/static/styling/img/team-1.jpg" height="450px" style="width: 100%;" />
+                  <h4 class="p-3 text-white" style="font-size:20px">CEO</h4>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-12 col-lg-4 pt-responsive">
+                <div class="dark-bg" style="border-radius:5px; border-top:5px solid #162c44">
+                  <img src="/static/styling/img/team-2.jpg" height="450px" style="width: 100%;" />
+                  <h4 class="p-3 text-white" style="font-size:20px">Senior Account Manager</h4>
+                </div>
+              </div>
+               <div class="col-sm-12 col-md-12 col-lg-4 pt-responsive pb-responsive">
+                 <div class="dark-bg" style="border-radius:5px; border-top:5px solid #162c44">
+                   <img src="/static/styling/img/team-3.jpg" height="450px" style="width: 100%;" />
+                   <h4 class="p-3 text-white" style="font-size:20px">Trade Analyst</h4>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+ <!-- SEVENTH SECTION END -->
+ 
+    <!-- footer SECTION BEGINS -->
+    <footer class="dark-bg mt-4 py-5">
+      <div class="container">
+        <div class="footer-upper">
+          <div class="row">
+            <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+              <div class="footer-content-list footer-content-item">
+                <div class="footer-content-title">
+                  <p class="dark-blue-font text-white">Our Company</p>
+                </div>
+                <ol class="footer-details footer-list">
+                  <li><a href="#about-section">About Us</a></li>
+                  <li><a href="#whyus-section">History</a></li>
+                  <li><a href="#team-section">Our Team</a></li>
+                  <li><a href="#services-section">Risk</a></li>
+                </ol>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+              <div class="footer-content-list footer-content-item">
+                <div class="footer-content-title">
+                  <p class="dark-blue-font text-white">Trading Opportunity</p>
+                </div>
+                <ol class="footer-details footer-list">
+                  <li><a href="#investment-section">Investment</a></li>
+                  <li><a href="#">Signup</a></li>
+                  <li><a href="#">Login</a></li>
+                </ol>
+              </div>
+            </div>
+            <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+              <div class="footer-content-list footer-content-item">
+                <div class="footer-content-title">
+                  <p class="dark-blue-font text-white">Information</p>
+                </div>
+                <ol class="footer-details footer-list">
+                  <li><a href="#strategy-section">Our Strategy</a></li>
+                  <li><a href="#contact-section">Contact</a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-lower">
+          <div class="footer-lower-item footer-copyright-text">
+            <p>Capital © copyright 2022 All rights reserved</p>
+          </div>
+          <div class="footer-lower-item footer-social-logo">
+            <ol class="footer-social-list">
+              <li class="social-btn social-btn-fb">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+              </li>
+              <li class="social-btn social-btn-tw">
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+              </li>
+              <li class="social-btn social-btn-pin">
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+              </li>
+              <li class="social-btn social-btn-yt">
+                <a href="#"><i class="bx bxl-whatsapp"></i></a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- .end footer -->
+
+    <script src="/static/styling/carousel/script.js"></script>
+    <!-- essential js -->
+    <script src="/static/styling/js/jquery-3.5.1.min.js"></script>
+    <script src="/static/styling/js/popper.min.js"></script>
+    <script src="/static/styling/js/bootstrap.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="/static/styling/js/jquery.magnific-popup.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/static/styling/js/owl.carousel.min.js"></script>
+    <!-- form ajazchimp js -->
+    <script src="/static/styling/js/jquery.ajaxchimp.min.js"></script>
+    <!-- form validator js  -->
+    <script src="/static/styling/js/form-validator.min.js"></script>
+    <!-- contact form js -->
+    <script src="/static/styling/js/contact-form-script.js"></script>
+    <!-- meanmenu js -->
+    <script src="/static/styling/js/jquery.meanmenu.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/static/styling/js/jquery.waypoints.js"></script>
+    <!-- counter js -->
+    <script src="/static/styling/js/counter-up.js"></script>
+    <!-- main js -->
+    <script src="/static/styling/js/script.js"></script>
+
+    <script type="text/javascript">
+      (function () {
+        var options = {
+          whatsapp: "+{{support_phone}}", // WhatsApp number
+          call_to_action: "Message us", // Call to action
+          position: "left", // Position may be 'right' or 'left'
+        };
+        var proto = document.location.protocol,
+          host = "whatshelp.io",
+          url = proto + "//static." + host;
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.async = true;
+        s.src = url + "/widget-send-button/js/init.js";
+        s.onload = function () {
+          WhWidgetSendButton.init(host, proto, options);
+        };
+        var x = document.getElementsByTagName("script")[0];
+        x.parentNode.insertBefore(s, x);
+      })();
+    </script>
+    <script>
+      let slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
+      }
+    </script>
+    <script>
+      let slideInde = 0;
+      showSlide();
+
+      function showSlide() {
+        let n;
+        let slide = document.getElementsByClassName("mySlides2");
+        let dot = document.getElementsByClassName("dot2");
+        for (n = 0; n < slide.length; n++) {
+          slide[n].style.display = "none";
+        }
+        slideInde++;
+        if (slideInde > slide.length) {
+          slideInde = 1;
+        }
+        for (n = 0; n < dot.length; n++) {
+          dot[n].className = dot[n].className.replace(" active", "");
+        }
+        slide[slideInde - 1].style.display = "block";
+        dot[slideInde - 1].className += " active";
+        setTimeout(showSlide, 4000); // Change image every 4 seconds
+      }
+    </script>
+  </body>
+</html>

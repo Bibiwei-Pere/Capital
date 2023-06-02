@@ -1,0 +1,431 @@
+{% load static %}{% load humanize %}
+<!DOCTYPE html>
+<html class="overflow-x-hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Aila" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="HiBootstrap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/static/img/ms-icon-144x144.png"/>
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Our Team | Our Competent Staffs</title>
+
+    <script src="https://use.fontawesome.com/d3bea22ec6.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/static/styling/css/bootstrap.min.css" type="text/css" media="all"/>
+    <!-- animate css -->
+    <link rel="stylesheet" href="/static/styling/css/animate.min.css" type="text/css" media="all"/>
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="/static/styling/css/meanmenu.min.css" type="text/css" media="all"/>
+    <!-- boxicons css -->
+    <link rel="stylesheet" href="static/styling/css/boxicons.min.css" type="text/css" media="all"/>
+    <!-- style css -->
+    <link rel="stylesheet" href="/static/styling/css/style.css" type="text/css" media="all"/>
+    <!-- responsive css -->
+    <link rel="stylesheet" href="/static/styling/css/responsive.css" type="text/css" media="all"/>
+
+    <script src="f18030f577.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link href="npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+
+  <body class="overflow-x-hidden">
+    <!-- navbar -->
+    <div class="fixed-top">
+      <div class="navbar-area">
+        <!-- mobile menu -->
+        <div class="mobile-nav">
+          <h4 class="logo">Logo</h4>
+          <!--<a href="#" class="logo"><img src="" style="width: 150px" alt="Capital"/></a>-->
+        </div>
+        <!-- desktop menu -->
+        <div class="header-container main-nav-3">
+          <nav class="d-flex bg-white justify-content-between navbar navbar-expand-sm navbar-light">
+            <h4 class="logo">Logo</h4>
+            <!--<a class="navbar-brand" href="#"><img src="" style="width: 130px" alt="Capital" /></a>-->
+            <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'about' %}" class="nav-link">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'history' %}" class="nav-link">History</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'team' %}" class="nav-link">Our Team</a>
+                </li>
+                <li class="nav-item">
+                  <a href="#investment-section" class="nav-link">Investment</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a href="{% url 'profile' %}" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                  <a href="{% url 'login' %}" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'signup' %}" class="nav-link">Signup</a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+            <!-- navbar option -->
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!--end navbar-->
+
+    <!--MINI NAVBAR BEGIN-->
+    <section class="dark-bg pt-55">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container border">
+        <div class="tradingview-widget-container__widget"></div>
+        <script
+          type="text/javascript"
+          src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+          async
+        >
+            {
+            "symbols": [
+              {
+                "proName": "FOREXCOM:SPXUSD",
+                "title": "S&P 500"
+              },
+              {
+                "proName": "FOREXCOM:NSXUSD",
+                "title": "US 100"
+              },
+              {
+                "proName": "FX_IDC:EURUSD",
+                "title": "EUR/USD"
+              },
+              {
+                "proName": "BITSTAMP:BTCUSD",
+                "title": "Bitcoin"
+              },
+              {
+                "proName": "BITSTAMP:ETHUSD",
+                "title": "Ethereum"
+              }
+            ],
+            "showSymbolLogo": true,
+            "colorTheme": "light",
+            "isTransparent": false,
+            "displayMode": "regular",
+            "locale": "en"
+          }
+        </script>
+      </div>
+      <!-- TradingView Widget END -->
+        <div class="container pb-5 pt-3">
+          <div class="d-flex justify-content-center py-3 ">
+              <a href="#" class="mini-navbar">Home</a>  
+              <a class="mini-navbar">Our Company</a>  
+              <a class="mini-navbar">Our Team</a>  
+          </div>
+          <p class="mini-navbar-text-2 pt-3">Our Team</p>
+        </div>
+    </section>
+    <!--MINI NAVBAR END-->
+
+    <!-- SECOND SECTION BEGINS -->
+    <section class="home-about-section-2 bg-off-white pt-50 pb-30 overflow-hidden">
+      <div class="container-fluid p-0">
+        <div class="home-about-content">
+          <div class="align-items-center m-0">
+            <div class="container col-sm-12 p-0">
+              <div class="container">
+                <div class="blockquote mb-5 py-2">
+                <p class="about-header-text-2">Our goal is to give you a high profit return with a little investment without you having the techncical know how on how the markets work.</p>
+                <p class="home-about-para my-0 pb-1">To achieve this, we have formed a team of the most skilled and experienced professionals available, making them available to all clients.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- SECOND SECTION ENDS -->
+
+    <!-- THIRD SECTION BEGINS -->
+    <section class="home-about-section-2 bg-off-white pt-40 pb-30 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0">
+                <div class="container">
+                  <div class="container row align-items-center">
+                    <div class="row just-content-between">
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-1 mb-4">
+                          <img src="/static/styling/img/member-1.jpeg" height="250px" style="width: 100%;" />
+                          <p class="home-about-para p-3">CEO Capital Hub & CDO Financial manager Hilton Becker South London 2021</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-1 mb-4">
+                          <img src="/static/styling/img/member-2.jpeg" height="250px" style="width: 100%;" />
+                          <p class="home-about-para p-3">CEO Capital Hub & CDO Financial manager Hilton Becker South London 2021</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-1 mb-4">
+                          <img src="/static/styling/img/member-3.jpeg" height="250px" style="width: 100%;" />
+                          <p class="home-about-para p-3">CEO Capital Hub & top african business tycoons, South London 2021</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-1 mb-4">
+                          <img src="/static/styling/img/member-4.jpeg" height="250px" style="width: 100%;" />
+                          <p class="home-about-para p-3">2018 benefactors summit. Capital Hub continues to expand until this day</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- THIRD SECTION END -->
+    
+    <!-- FOURTH SECTION BEGIN -->
+    <section class="home-about-section-2 bg-off-white pt-40 pb-30 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0">
+                <div class="container">
+                  <p class="home-about-para mb-4">Our team is comprised of qualified, skilled, knowledgeable, and experienced experts with a driving passion for the markets and the will to succeed.</p>
+                  <p class="home-about-para mb-4">We are fully committed to providing our clients with the best experience and results, and we work tirelessly to make sure that every aspect of our firm is formulated with thoughts of the customer's satisfaction in mind.</p>
+                  <p class="home-about-para mb-4">If you ever face any obstacles or difficulties in operating the website, for example difficulty logging in, or are having trouble completing activities on the site, you can always <a href="#">contact our tech support</a> team to provide you with comprehensive assistance. They can provide you with the simplest, and most effective solution to any problem that you may have.</p>
+                  <p class="home-about-para mb-4">Capital.com also supplies you with one of the most committed and experienced team of investing experts available on the internet. It's up to our experts to provide you with anything from advice and suggestions to information, analysis, or strategizing, whatever you may need when it comes to investing, they can help. We've got our experts available at all times, so whenever you want answers you can get them with the ultimate expedience by sending an internal message with your question or problem Whether you're an advanced investor seeking to penetrate deeper into sets of data or come up with an intricate investing strategy, or an amateur who's simply looking to get introduced to major concepts and ideas or receive guidance, our experts can be of huge assistance. Whether it's long or short term goals that you're concerned with, great results and measurable success are easily within your grasp with the help of our knowledgeable experts.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- FOURTH SECTION END -->
+
+    <!-- FIFTH SECTION BEGINS -->
+    <section class="home-about-section-2 light-brown-bg bg-off-white pt-30 pb-30 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0">
+                <div
+                  class="container"
+                >
+                  <p class="home-about-para">Our website also is meticulous in gathering and compiling the most up to date and relevant information, data, and statistics on the market that is available at any time. This information is culled from only the most trustworthy sources, and our pros use it to formulate our insightful investing strategies and market analyses. With this information, analysis, advice, and resources, you've got all the tools and capabilities at your fingertips to develop a marketing strategy that is full-fledged, diverse, and ultimately successful, providing you with the excellent gains that you're looking for. Our website has the tools, and our experts can serve as your guides towards success.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- FIFTH SECTION END -->
+
+    <!-- SIXTH SECTION BEGINS -->
+    <section class="home-about-section-2 bg-off-white pt-30 pb-30 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0">
+                <div
+                  class="container"
+                >
+                <p class="home-about-para">Our technical support and staff of experienced investors and market analysts aren't the only things that set us apart; we also have a dedicated and enthusiastic customer service team to ensure that your experience with us is always the best. Our customer service representatives' role is to assist you in matters of privacy and security so that you have no impediments or issues using our website and may have everything the way you want it. We've taken every precaution necessary to ensure your safety, and we've never received a single complaint about data abuse or privacy and security issues. This manner, we can keep each of our accounts secure and our customers happy. If you have any questions, difficulties, or concerns, please contact us.</p>
+                <p class="home-about-para">Whatever the issue or problem, remember that we have numerous teams of experienced and helpful individuals accessible 24/7 for everything you could need, with a varied variety of expertise and experience in the markets, our website, security, technological concerns, and more. We also encourage and respect input on the performance of our support staff so that each client receives the best possible help.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- SIXTH SECTION END -->
+
+    <!-- SEVENTH SECTION BEGINS -->
+    <section class="home-about-section-2 bg-off-white pt-40 pb-30 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0">
+                <div class="container">
+                  <p class="blockquote py-4 mb-5 home-about-para">Let us present our experts who are fighting for our shared objective of being self-sufficient in everyday life:</p>
+                  <div class="container row align-items-center">
+                    <div class="row just-content-between">
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-2 mb-4">
+                            <p class="dark-bg white-font-1 p-3">Emily Kaydence</p>
+                            <p class="home-about-para-2 px-3 py-1">Founder and CEO</p>
+                            <p class="home-about-para p-3">Started as a young trader Mrs. Emily Kaydence showed perfect results in foreign exchange. Thus, he decided to move further and open his own trading business.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-2 mb-4">
+                            <p class="dark-bg white-font-1 p-3">Ruth Aylin</p>
+                            <p class="home-about-para-2 px-3 py-1">Editor in Chief</p>
+                            <p class="home-about-para p-3">Ruth Aylin is an American entrepreneur, media proprietor, investor. She is the editor at Capital. She determines the look and feel of the publication, has the final say in what is published and what isn't.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-2 mb-4">
+                            <p class="dark-bg white-font-1 p-3">Gunnar Cordell</p>
+                            <p class="home-about-para-2 px-3 py-1">Vice President of Finance</p>
+                            <p class="home-about-para p-3">Having an incredible experience and expertise Gunnar Cordell is in charge of reporting to the president and serving as an integral member of the senior management team, the Vice President of Finance and Operations (VP) will be responsible for the development of the company's financial management and so much more.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-2 mb-4">
+                            <p class="dark-bg white-font-1 p-3">Moses Gilbert</p>
+                            <p class="home-about-para-2 px-3 py-1">Vice President Marketing Services</p>
+                            <p class="home-about-para p-3">Vice president of marketing oversees and directs the Marketing department. In order to keep us aligned with our company goals, creates, designs, implements and monitors marketing strategies.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-12 col-md-6 col-lg-4">
+                        <div class="about-list-2 mb-4">
+                            <p class="dark-bg white-font-1 p-3">Marc Nikhil</p>
+                            <p class="home-about-para-2 px-3 py-1">Account Executive</p>
+                            <p class="home-about-para p-3">Our account executive is responsible for fully understanding a client's needs and determining whether a business can meet those needs and more.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- SEVENTH SECTION END -->
+
+    <!-- EIGHT SECTION BEGINS -->
+    <section class="home-about-section-2 light-brown-bg bg-off-white pt-30 pb-60 overflow-hidden">
+        <div class="container-fluid p-0">
+          <div class="home-about-content">
+            <div class="align-items-center m-0">
+              <div class="container col-sm-12 p-0 d-flex justify-content-center">
+                <div class="container w-50">
+                  <p class="dark-blue-font pb-2 d-flex justify-content-center">You are in good hands</p>
+                  <a href="{% url "signup" %}" class="btn2 d-flex justify-content-center">
+                    Get Started Today
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- EIGHT SECTION END -->
+
+   <!-- footer SECTION BEGINS -->
+   <footer class="dark-bg py-5">
+    <div class="container">
+      <div class="footer-upper">
+        <div class="row">
+          <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+            <div class="footer-content-list footer-content-item">
+              <div class="footer-content-title">
+                <p class="dark-blue-font text-white">Our Company</p>
+              </div>
+              <ol class="footer-details footer-list">
+                <li><a href="#about-section">About Us</a></li>
+                <li><a href="#whyus-section">History</a></li>
+                <li><a href="#team-section">Our Team</a></li>
+                <li><a href="#services-section">Risk</a></li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+            <div class="footer-content-list footer-content-item">
+              <div class="footer-content-title">
+                <p class="dark-blue-font text-white">Trading Opportunity</p>
+              </div>
+              <ol class="footer-details footer-list">
+                <li><a href="#investment-section">Investment</a></li>
+                <li><a href="#">Signup</a></li>
+                <li><a href="#">Login</a></li>
+              </ol>
+            </div>
+          </div>
+          <div class="col-sm-5 col-md-4 col-lg-4 w-50">
+            <div class="footer-content-list footer-content-item">
+              <div class="footer-content-title">
+                <p class="dark-blue-font text-white">Information</p>
+              </div>
+              <ol class="footer-details footer-list">
+                <li><a href="#strategy-section">Our Strategy</a></li>
+                <li><a href="#contact-section">Contact</a></li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-lower">
+        <div class="footer-lower-item footer-copyright-text">
+          <p>Capital © copyright 2022 All rights reserved</p>
+        </div>
+        <div class="footer-lower-item footer-social-logo">
+          <ul class="footer-social-list">
+            <li class="social-btn social-btn-fb">
+              <a href="#"><i class="bx bxl-facebook"></i></a>
+            </li>
+            <li class="social-btn social-btn-tw">
+              <a href="#"><i class="bx bxl-twitter"></i></a>
+            </li>
+            <li class="social-btn social-btn-pin">
+              <a href="#"><i class="bx bxl-instagram"></i></a>
+            </li>
+            <li class="social-btn social-btn-yt">
+              <a href="#"><i class="bx bxl-whatsapp"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- .end footer -->
+
+  <script src="/static/styling/carousel/script.js"></script>
+    <!-- essential js -->
+    <script src="/static/styling/js/jquery-3.5.1.min.js"></script>
+    <script src="/static/styling/js/popper.min.js"></script>
+    <script src="/static/styling/js/bootstrap.min.js"></script>
+    <!-- magnific popup js -->
+    <script src="/static/styling/js/jquery.magnific-popup.min.js"></script>
+    <!-- owl carousel js -->
+    <script src="/static/styling/js/owl.carousel.min.js"></script>
+    <!-- form ajazchimp js -->
+    <script src="/static/styling/js/jquery.ajaxchimp.min.js"></script>
+    <!-- form validator js  -->
+    <script src="/static/styling/js/form-validator.min.js"></script>
+    <!-- contact form js -->
+    <script src="/static/styling/js/contact-form-script.js"></script>
+    <!-- meanmenu js -->
+    <script src="/static/styling/js/jquery.meanmenu.min.js"></script>
+    <!-- waypoints js -->
+    <script src="/static/styling/js/jquery.waypoints.js"></script>
+    <!-- counter js -->
+    <script src="/static/styling/js/counter-up.js"></script>
+    <!-- main js -->
+    <script src="/static/styling/js/script.js"></script> 
+  </body>
+</html>
+

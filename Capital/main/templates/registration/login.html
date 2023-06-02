@@ -1,0 +1,108 @@
+{% load static %}{% load humanize %}
+<!DOCTYPE html>
+<html class="overflow-x-hidden">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Aila" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="HiBootstrap" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/static/img/ms-icon-144x144.png"/>
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>Login | Welcome to Capital</title>
+
+    <script src="https://use.fontawesome.com/d3bea22ec6.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="/static/styling/css/bootstrap.min.css" type="text/css" media="all"/>
+    <!-- animate css -->
+    <link rel="stylesheet" href="/static/styling/css/animate.min.css" type="text/css" media="all"/>
+    <!-- meanmenu css -->
+    <link rel="stylesheet" href="/static/styling/css/meanmenu.min.css" type="text/css" media="all"/>
+    <!-- boxicons css -->
+    <link rel="stylesheet" href="static/styling/css/boxicons.min.css" type="text/css" media="all"/>
+    <!-- style css -->
+    <link rel="stylesheet" href="/static/styling/css/login.css" type="text/css" media="all"/>
+    <!-- responsive css -->
+    <link rel="stylesheet" href="/static/styling/css/responsive2.css" type="text/css" media="all"/>
+
+    <script src="f18030f577.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> -->
+    <link href="npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  </head>
+
+  <body class="img-bg overflow-x-hidden">
+
+    <!-- SECTION BEGINS -->
+      <div class="main">    
+        <input type="checkbox" id="chk" aria-hidden="true">
+    
+          <div class="login">
+            <form>
+              <p class="text-top-1">Login</p>
+              <input type="email" name="email" placeholder="Email" required="">
+              <input type="password" name="pswd" placeholder="Password" required="">
+              <a href="{% url 'password_reset' %}" class="alink">Forgot Password ?</a>
+              <button type="submit" onClick="this.form.submit(); this.disabled=true; this.innerText ='Authenticating.....'; ">Login</button>
+              <p class="alink-1">Not yet registered? - <label for="chk" class="alink-4" aria-hidden="true">Sign up</label></p>
+            </form>
+          </div>
+          <div class="signup">
+            <form method="POST">
+                {% csrf_token %}
+              <p class="text-top">Sign up</p>
+              <input type="text" name="txt" placeholder="First Name" required="">
+              <input type="text" name="txt" placeholder="Last Name" required="">
+              <input type="text" name="txt" placeholder="Username" required="">
+              <input type="email" name="email" placeholder="Email" required="">
+              <input type="number" name="txt" placeholder="Phone" required="">
+              <div class="mx-6 d-flex flex-column justify-content-center">
+                <select name="country" required class="form-control light-blue-bg">
+                  <option value="" disabled selected hidden>--Select Country--</option>
+                  <option value="coffee">England</option>
+                  <option value="tea">Nigeria</option>
+                  <option value="milk">Zambia</option>
+                </select>
+                <select name="country" required class="mt-3 form-control light-blue-bg">
+                  <option value="" disabled selected hidden>--Choose Plan--</option>
+                  <option value="Beginner">Beginner</option>
+                  <option value="Executive">Executive</option>
+                  <option value="Professional">Professional</option>
+                  <option value="Master">Master</option>
+                </select>
+              </div>
+              <input type="password" name="pswd" placeholder="Password" required="">
+              <input type="password" name="pswd" placeholder="Comfirm Password" required="">
+              <button>Sign up</button>
+              <p class="login-text pt-4">I already have an account. <label for="chk" class="alink-3" aria-hidden="true">Login</label></p>
+              
+            </form>
+          </div>
+      </div>
+      
+      <!--<div class="container-fluid p-0">
+              <div class="container">
+                <div class="container login-bg">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <div class="myform">
+                            <input type="email" class="form-input-1" placeholder="Email">
+                            <div class="mb-3">
+                            </div>
+                            <div class="login-account">
+                                <span class="msg">Don't have an account yet ?</span>
+                                <a href="{% url 'signup' %}" id="show-signup" class="link">Sign Up</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+              </div>
+      </div>-->
+    <!-- SECTION END -->
+
+  </body>
+</html>

@@ -1,0 +1,151 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+  }
+  .main{
+    width: 350px;
+    height: 500px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+  }
+  #chk{
+    display: none;
+  }
+  .signup{
+    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    transform: translateY(100px);
+    transition: .8s ease-in-out;
+    overflow-y: scroll;
+    width:100%;
+    height: 100%;
+    padding-top: 60px;
+  }
+  .login{
+    position: relative;
+    background: #fff;
+    height: 460px;
+    border-radius:30px 30px 0 0;
+  }
+  ::-webkit-scrollbar{
+    width: 2px;
+  }
+  .login-text{
+    display: flex;
+    margin: 0;
+    color: #fff;
+    justify-content: center;
+  }
+  label{
+    cursor: pointer;
+    transition: .5s ease-in-out;
+  }
+  input{
+    width: 80%;
+    height: 20px;
+    background: #d0dfff;
+    justify-content: center;
+    display: flex;
+    margin: 15px auto;
+    padding: 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  select{
+    width: 80%;
+    height: 20px;
+    background: #d0dfff;
+    justify-content: center;
+    display: flex;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+  }
+  .mx-6{
+    margin: 0 35px 0 35px;
+  }
+  button{
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #573b8a;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: .2s ease-in;
+    cursor: pointer;
+  }
+  button:hover{
+    background: #6d44b8;
+  }
+  .signup label{
+    color: #d0dfff;
+    transform: scale(.6);
+  }
+  
+  #chk:checked ~ .signup{
+    transform: translateY(-500px);
+  }
+  #chk:checked ~ .signup label{
+    transform: scale(1);  
+  }
+  #chk:checked ~ .login label{
+    transform: scale(.6);
+  }
+  .alink{
+    color: #573b8a;
+    margin-left: 35px;
+    font-weight: 500;
+  }
+  .alink-2{
+    color: #573b8a;
+    font-weight: 500;
+  }
+  .alink-3{
+    margin-left: 3px;
+    color: #d0dfff;
+    font-weight: 500;
+  }
+  .alink-4{
+    color: #573b8a;
+    font-weight: 500;
+  }
+  .light-blue-bg{
+    background: #d0dfff;
+  }
+  .alink-1{
+    text-align: center;
+    width: 70%;
+    margin: 30px auto;
+  }
+  .text-top{
+    padding-bottom: 30px;
+    color: #fff;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    margin: 10px auto;
+    font-weight: bold;
+  }
+  .text-top-1{
+    padding: 30px 0 30px 0;
+    color: #573b8a;
+    font-size: 2.3em;
+    justify-content: center;
+    display: flex;
+    font-weight: bold;
+  }
