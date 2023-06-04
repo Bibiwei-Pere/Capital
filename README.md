@@ -32,7 +32,7 @@
 
 3. Code Editor: [VS Code](https://code.visualstudio.com/)
 
-4. 
+
 
 ## Other projects
 
