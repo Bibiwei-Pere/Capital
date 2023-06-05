@@ -1,4 +1,9 @@
-<img src="" alt="Personal Portfolio" />
+![capital](https://github.com/Bibiwei-Pere/Capital/assets/106984663/3dd92bfe-c06d-4466-bd49-9979245ba43d)
+![capital-1](https://github.com/Bibiwei-Pere/Capital/assets/106984663/cd3382d9-634b-49c9-92a9-f0deffc9ed0a)
+![capital-2](https://github.com/Bibiwei-Pere/Capital/assets/106984663/b459e0af-98d9-4fd3-9bf0-217b6a3a83e5)
+![capital-3](https://github.com/Bibiwei-Pere/Capital/assets/106984663/7973db06-1ff4-47b7-9fc1-d9a28a06082c)
+![capital-4](https://github.com/Bibiwei-Pere/Capital/assets/106984663/af442f34-18c2-4a0a-96b8-1212d2b67258)
+![capita-5](https://github.com/Bibiwei-Pere/Capital/assets/106984663/dda42b8a-9619-49e7-a6ca-70407f8e3917)
 
 ## Capital
 
